@@ -58,9 +58,10 @@ void update_shift_register_output(int *digits, int arr_size)
     }
     toggle_clk();
   }
-  // PIND2=0;
+  // OE high
   PORTD &= 0b11111011;
   toggle_clk();
+  // toggle_clk();
 }
 
 /*
@@ -95,7 +96,8 @@ int main(){
   int dig_4[] = {1,1,0,0,1,1,0};
   int dig_5[] = {1,1,0,1,1,0,1};
   int dig_6[] = {1,1,1,1,1,0,1};
-  int dig_7[] = {0,0,0,0,1,1,1};
+  // int dig_7[] = {0,0,0,0,1,1,1};
+  int dig_7[] = {1,1,1,0,0,0,0};
   int dig_8[] = {1,1,1,1,1,1,1};
   int dig_9[] = {1,1,0,1,1,1,1};
 //  int arr_dig[] = {&dig_9, &dig_8, &dig_7, &dig_6, &dig_5, &dig_4, &dig_3, &dig_2, &dig_1, &dig_0};
@@ -116,13 +118,13 @@ int main(){
 //  };
   reset_shift_register();
   int pattern1[] = {0,0,0,0,0,0,1};
-  // update_shift_register_output(arr_dig[1], 7);
+  update_shift_register_output(arr_dig[7], 8);
 
-  for( int i = 0; i < 10; i++ ){
-    update_shift_register_output(arr_dig[i], 7);
-    // delay(500);
-    // reset_shift_register();
-    // delay(500);
-  }
+//  for( int i = 0; i < 10; i++ ){
+//    update_shift_register_output(arr_dig[i], 7);
+//    // delay(500);
+//    // reset_shift_register();
+//    // delay(500);
+//  }
  
 }
