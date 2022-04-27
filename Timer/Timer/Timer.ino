@@ -8,7 +8,7 @@
  *  Can pull Pin 13 (OE) low after writing to register is completed to display the data
  *  Pin 14 (DS) is the data input
  *  
- * This is connected to the ATMEGA as follows:
+ * This is connected to the ATMEGA328p as follows:
  *  PIND0:  SHCP, STCP
  *  PIND1:  MR
  *  PIND2:  OE
@@ -38,7 +38,10 @@ int counter = 0;
 volatile char mode = 'a';
 volatile char set_mode = 'd';
 
-// Initialising the Timer0 Overflow counter setup
+/*
+ * Initialising the Timer0 Overflow counter setup
+ * Used to refresh the display
+*/ 
 void timer0_setup()
 {
   // Select Clock prescaler to /64
@@ -47,7 +50,10 @@ void timer0_setup()
   TIMSK0 = 0b00000001;
 }
 
-// Initialising the Timer Overflow Counter 2
+/* 
+ *  Initialising the Timer Overflow Counter 2
+ *  Used to increment the display of the digits
+ */
 void timer2_setup()
 {
   // Clock divider set to 64
