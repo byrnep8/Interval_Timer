@@ -1,6 +1,7 @@
 "# Interval_Timer" 
 Timer setup for 5 7 segment displays to display MM::SS, with the Most Significant Digit being the number of intervals.
 Programmibility from push buttons allows for the number of intervals to be set along with work and rest time for the users intervals to be performed.
+Using a shift register to allow for easier connections to the numerous 7 segment displays.
 
 Software designed to use the ATMEGA328p Device.
 PCB Designed using Easy EDA, using push button switches to allow for interaction with the microcontroller to set the # Intervals, Mins and Secs for work/rest.
